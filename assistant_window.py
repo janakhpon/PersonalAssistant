@@ -2,7 +2,7 @@ import pyaudio
 import wave
 import speech_recognition as sr
 import subprocess
-from commands_window import Commander
+from launcher_window import Commander
 import sys
 
 running = True
