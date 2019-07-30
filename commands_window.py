@@ -1,5 +1,8 @@
 import subprocess
 import os
+import requests
+from bs4 import BeautifulSoup
+from web_assistant_win import Fetcher
 
 
 class Commander:
@@ -9,16 +12,14 @@ class Commander:
 
     def discover(self, text):
         if "what" in text and "your name" in text:
-            if "what my name" in text:
+            if "my name" in text:
                 self.respond("You haven't told me your name yet")
             else:
                 self.respond("My name is Python 3.7.2. May I help you?")
-
-        if "launch code" or "open code" in text:
-            app = text.split(" ", 1)[-1]  # expression in python 1 equals the second word
-            self.respond("Opening " + app)
-            if app == "notepad":
-                subprocess.call('C:\Windows\system32\notepad.exe')
+        else:
+            f = Fetcher("https://www.google.com/search?q=" + text)
+            answer = f.lookup()
+            self.respond(answer)
 
     def respond(self, response):
         print(response)
