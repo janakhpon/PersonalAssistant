@@ -2,7 +2,6 @@ import subprocess
 import os
 import requests
 from bs4 import BeautifulSoup
-from web_assistant_win import Fetcher
 
 
 class Commander:
@@ -17,9 +16,8 @@ class Commander:
             else:
                 self.respond("My name is Python 3.7.2. May I help you?")
         else:
-            f = Fetcher("https://www.google.com/search?q=" + text)
 
-            answer = f.lookup()
+            answer = "i do not have web service yet"
             self.respond(answer)
 
     def respond(self, response):

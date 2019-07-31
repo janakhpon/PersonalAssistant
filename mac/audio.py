@@ -2,11 +2,10 @@ import pyaudio
 import wave
 import speech_recognition as sr
 import subprocess
-from audio_cmd_window import Commander
-import sys
+from commands import Commander
+
 
 running = True
-
 
 def say(text):
     subprocess.call('say ' + text, shell=True)
@@ -34,32 +33,39 @@ def play_audio(filename):
     pa.terminate()
 
 
-play_audio("./audio/intro.wav")
-
 r = sr.Recognizer()
 cmd = Commander()
 
+def initSpeech():
+    print("Listening...")
 
-def initspeech():
-    print("Listening ..")
-    play_audio("./audio/yes.wav")
+    play_audio("./audio/audio_initiate.wav")
 
     with sr.Microphone() as source:
-        print("Say something ..")
+        print("Say Something")
         audio = r.listen(source)
 
-    play_audio("./audio/and.wav")
+    play_audio("./audio/audio_end.wav")
 
     command = ""
 
     try:
         command = r.recognize_google(audio)
     except:
-        play_audio("./audio/blah-blah-blah.wav")
-        print("couldn't understand you")
+        print("Couldn't understand you, bro.")
 
-    print("Your command :")
+    print("Your command:")
     print(command)
+    if command in ["quit", "exit", "bye", "goodbye"]:
+        global running
+        running = False
+
+    cmd.discover(command)
+
+    #say('You said: ' + command)
 
 
-initspeech()
+
+
+while running == True:
+    initSpeech()
