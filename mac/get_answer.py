@@ -12,24 +12,20 @@ import sys
 
 class Fetcher:
     def __init__(self, url):
-
-        # prepare the option for the chrome driver
-        options = webdriver.ChromeOptions()
-        options.add_argument('headless')
-        # start chrome browser
-        self.driver = webdriver.Chrome(options=options)
+        self.driver = webdriver.PhantomJS()
         self.driver.wait = WebDriverWait(self.driver, 5)
         self.url = url
         print(self.url)
 
+
     def lookup(self):
         self.driver.get(self.url)
         try:
-            ip = self.driver.wait.until(EC.presence_of_all_elements_located(
+            ip = self.driver.wait.until(EC.presence_of_element_located(
                 (By.CLASS_NAME, "gsfi")
             ))
         except:
-            print("Failed")
+            ("Failed, bro")
 
         soup = BeautifulSoup(self.driver.page_source, "html.parser")
         answer = soup.find_all(class_="_sPg")
@@ -38,11 +34,10 @@ class Fetcher:
             f.write(str(soup))
 
         if not answer:
-            answer = soup.find_all(class_="_XWK")
+            answer = soup.find_all(class_="_m3b")
 
         if not answer:
-            answer = "I don't know"
+            answer = "I don't know."
 
         self.driver.quit()
-        print(answer[0].get_text())
         return answer[0].get_text()
