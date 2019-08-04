@@ -18,9 +18,9 @@ class Commander:
                 self.respond("My name is Python 3.7.2. May I help you?")
         else:
             f = Fetcher("https://www.google.com/search?q=" + text)
-
             answer = f.lookup()
             self.respond(answer)
+            print(answer)
 
     def respond(self, response):
         print(response)

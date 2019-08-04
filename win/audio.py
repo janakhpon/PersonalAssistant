@@ -2,14 +2,14 @@ import pyaudio
 import wave
 import speech_recognition as sr
 import subprocess
-from audio_cmd_window import Commander
+from commands import Commander
 import sys
 
 running = True
 
 
 def say(text):
-    subprocess.call('echo ' + text, shell=True)
+    subprocess.call('say ' + text, shell=True)
 
 
 def play_audio(filename):
@@ -34,8 +34,6 @@ def play_audio(filename):
     pa.terminate()
 
 
-play_audio("./audio/intro.wav")
-
 r = sr.Recognizer()
 cmd = Commander()
 
@@ -55,7 +53,7 @@ def initspeech():
     try:
         command = r.recognize_google(audio)
     except:
-        play_audio("./audio/blah-blah-blah.wav")
+        play_audio("../audio/blah-blah-blah.wav")
         print("couldn't understand you")
 
     print("Your command :")
@@ -69,7 +67,5 @@ def initspeech():
     cmd.discover(command)
 
 
-
 while running:
     initspeech()
-
