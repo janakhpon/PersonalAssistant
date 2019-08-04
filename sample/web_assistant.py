@@ -36,13 +36,14 @@ class Fetcher:
 
         with open("test.html", "w+") as f:
             f.write(str(soup))
+            print(str(soup))
 
         if not answer:
-            answer = soup.find_all(class_="_XWK")
+            answer = soup.find_all(class_="_m3b")
+            print(answer)
 
         if not answer:
-            answer = "I don't know"
+            answer = "I don't know."
 
         self.driver.quit()
-        print(answer[0].get_text())
         return answer[0].get_text()

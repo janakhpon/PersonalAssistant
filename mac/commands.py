@@ -21,9 +21,6 @@ class Commander:
             answer = f.lookup()
             self.respond(answer)
 
-
-
-
     def respond(self, response):
         print(response)
         subprocess.call("say '" + response + "'", shell=True)
