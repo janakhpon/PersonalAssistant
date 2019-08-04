@@ -37,6 +37,13 @@ class Commander:
                 style.extract()
             print(results.get_text())
 
+        if "I don't like you" in text:
+            self.respond("Ok go on, i don't give a fuck!")
+            print("Ok go on, i don't give a fuck!")
+        if "*** you" in text:
+            self.respond("So am I, wait.. fuck you triple x time")
+            print("So am I, wait.. fuck you triple x time")
+
     def respond(self, response):
         print(response)
         subprocess.call("echo " + response, shell=True)
