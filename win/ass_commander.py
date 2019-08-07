@@ -31,13 +31,9 @@ class Commander:
             URL = 'https://en.wikipedia.org/wiki/' + con
             content = requests.get(URL)
             soup = BeautifulSoup(content.text, 'html.parser')
-
-            results = soup.find('div', id='mw-content-text')
-            for table in results.find_all("table"):
-                table.extract()
-            for style in results.find_all("style"):
-                style.extract()
-            self.respond(results.get_text().rstrip(",..^"))
+            results = soup.find('div', id='mw-content-text').find('div', class_="mw-parser-output").find_all('p', limit=5)
+            for result in results:
+                self.respond(result.get_text().rstrip())
 
         if "I don't like you" in text:
             self.respond("Ok go on, i don't give a fuck!")
@@ -47,8 +43,8 @@ class Commander:
     def respond(self, response):
         print(response)
         engine = pyttsx3.init()
-        engine.setProperty('rate', 150)    # Speed percent (can go over 100)
-        engine.setProperty('volume', 0.9)  # Volume 0-1
+        engine.setProperty('rate', 120)    # Speed percent (can go over 100)
+        engine.setProperty('volume', 1)  # Volume 0-1
         engine.say(response)
         engine.runAndWait()
 

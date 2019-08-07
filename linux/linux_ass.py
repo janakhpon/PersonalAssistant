@@ -42,7 +42,7 @@ def initspeech():
 
     # Set properties _before_ you add things to say
     engine.setProperty('rate', 120)    # Speed percent (can go over 100)
-    engine.setProperty('volume', 0.9)  # Volume 0-1
+    engine.setProperty('volume', 1)  # Volume 0-1
 
     # Queue up things to say.
     # There will be a short break between each one
