@@ -1,5 +1,10 @@
-# Ei'Gallery
-  Ei'sGallery is a simple wallpaper website for nature lover.You can upload wallpaper with related `TYPE` and `TAG WORDS` and as a consequence of this you can easily select `TYPE` options or `SEARCH TAG WORDS` from search box. `CRUD` operation can only be done with `admin` route. Here is a github example demo for [herokudeploy](https://ei-sgallery.herokuapp.com/)
+# Pyassistant
+  Pyassistant is a python project uses (Text To Speech) and web scraping future to micmic like a real personal assistant. If you're reading this markdown file here at the moment, be patient with this project cuz it is a long term project meant to be for a real world personal assistant. However i will update its status code everytime i update it so be sure you check it out before you clone.
+
+
+# STATUS (GDEV011)
+  Only wikipedia scraping results are available now but still has a few issues with querying results
+
 
 
 
@@ -7,50 +12,21 @@
 
 clone the repository
 
-    git clone https://github.com/janakhpon/Ei-sGallery.git
+    git clone https://github.com/janakhpon/Pyassistant.git
 
 Get into root folder
 
-    cd Ei'sGallery
+    cd Pyassistant
 
-Install Dependencies using [npm](https://www.npmjs.com/)
+Install modulues using [pip](https://www.npmjs.com/)
 
-    npm install
-    npm i -d
-    npm run start
-    npm run dev
+    pip install 'package_name_here'
 
-Install Dependencies using [yarn](https://yarnpkg.com/en/)
+Install modules using [pip3](https://yarnpkg.com/en/)
 
-    yarn install
-    yarn add
-    yarn start
-    yarn dev
+    pip3 install 'package_name_here'
 
 
 
-
-# Warning
-If u run into error use the following steps
-
-```bash
-sudo yarn install
-sudo yarn
-sudo yarn start
-sudo yarn dev
-```
-or
-
-```bash
-sudo npm install
-sudo npm i -d
-sudo npm run start
-sudo npm run dev
-```
-
-#API REQUESTS
-Currently only list of data `get` request only is possile to make but i still havent add `allow cross origin` option for external request.
-```bash
-axios.get('https://ei-sgallery.herokuapp.com/ei-gallery/list', ...)
 ```
 
