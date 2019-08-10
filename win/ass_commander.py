@@ -43,8 +43,8 @@ class Commander:
     def respond(self, response):
         print(response)
         engine = pyttsx3.init()
-        engine.setProperty('rate', 120)    # Speed percent (can go over 100)
-        engine.setProperty('volume', 1)  # Volume 0-1
+        engine.setProperty('rate', 150)    # Speed percent (can go over 100)
+        engine.setProperty('volume', 0.9)  # Volume 0-1
         engine.say(response)
         engine.runAndWait()
 
