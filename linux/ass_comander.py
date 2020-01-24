@@ -4,6 +4,7 @@ import requests
 import pyttsx3
 from bs4 import BeautifulSoup
 
+engine = pyttsx3.init('dummy')
 
 class Commander:
     def __init__(self):
@@ -51,4 +52,3 @@ class Commander:
         engine.setProperty('volume', 0.9)  # Volume 0-1
         engine.say(response)
         engine.runAndWait()
-
