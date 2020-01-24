@@ -4,7 +4,7 @@ import requests
 import pyttsx3
 from bs4 import BeautifulSoup
 
-engine = pyttsx3.init('dummy')
+
 
 class Commander:
     def __init__(self):
@@ -47,7 +47,7 @@ class Commander:
 
     def respond(self, response):
         print(response)
-        engine = pyttsx3.init()
+        engine = pyttsx3.init('dummy')
         engine.setProperty('rate', 150)    # Speed percent (can go over 100)
         engine.setProperty('volume', 0.9)  # Volume 0-1
         engine.say(response)
