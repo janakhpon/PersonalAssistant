@@ -38,7 +38,7 @@ cmd = Commander()
 
 def initspeech():
     # One time initialization
-    engine = pyttsx3.init()
+    engine = pyttsx3.init('dummy')
 
     # Set properties _before_ you add things to say
     engine.setProperty('rate', 120)    # Speed percent (can go over 100)
@@ -80,4 +80,3 @@ def initspeech():
 
 while running:
     initspeech()
-
