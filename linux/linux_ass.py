@@ -38,7 +38,7 @@ cmd = Commander()
 
 def initspeech():
     # One time initialization
-    engine = pyttsx3.init('dummy')
+    engine = pyttsx3.init()
 
     # Set properties _before_ you add things to say
     engine.setProperty('rate', 120)    # Speed percent (can go over 100)
@@ -47,8 +47,9 @@ def initspeech():
     # Queue up things to say.
     # There will be a short break between each one
     # when spoken, like a pause between sentences.
-    engine.say("I am Listening ")
+    engine.say("Go on I am Listening")
     engine.runAndWait()
+
     print("Say something, I am Listening ..")
 
     with sr.Microphone() as source:
