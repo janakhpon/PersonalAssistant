@@ -1,5 +1,5 @@
-# Pyassistant
-  Pyassistant is a python project uses (Text To Speech) and web scraping future to micmic like a real personal assistant. If you're reading this markdown file here at the moment, be patient with this project cuz it is a long term project meant to be for a real world personal assistant. However i will update its status code everytime i update it so be sure you check it out before you clone.
+# PersonalAssistant
+  PersonalAssistant is a python project uses (Text To Speech) and web scraping future to micmic like a real personal assistant. If you're reading this markdown file here at the moment, be patient with this project cuz it is a long term project meant to be for a real world personal assistant. However i will update its status code everytime i update it so be sure you check it out before you clone.
 
 
 # STATUS (GDEV011)
@@ -12,11 +12,11 @@
 
 clone the repository
 
-    git clone https://github.com/janakhpon/Pyassistant.git
+    git clone https://github.com/janakhpon/PersonalAssistant.git
 
 Get into root folder
 
-    cd Pyassistant
+    cd PersonalAssistant
 
 Install modulues using [pip](https://www.npmjs.com/)
 
@@ -29,4 +29,3 @@ Install modules using [pip3](https://yarnpkg.com/en/)
 
 
 ```
-
