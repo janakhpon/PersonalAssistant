@@ -15,7 +15,7 @@ class Commander:
             if "my name" in text:
                 self.respond("You haven't told me your name yet")
             if "your name" in text:
-                self.respond(" I am Python assistant. May i help you ? ")
+                self.respond(" I am Personal assistant. May i help you ? ")
             else:
                 params = {"q": text}
                 r = requests.get("https://www.bing.com/search", params=params)
@@ -31,9 +31,17 @@ class Commander:
             URL = 'https://en.wikipedia.org/wiki/' + con
             content = requests.get(URL)
             soup = BeautifulSoup(content.text, 'html.parser')
-            results = soup.find('div', id='mw-content-text').find('div', class_="mw-parser-output").find_all('p', limit=5)
-            for result in results:
-                self.respond(result.get_text().rstrip())
+            try:
+                results = soup.find('div', id='mw-content-text').find('div', class_="mw-parser-output").find_all('p', limit=5)
+            except:
+                results = ""
+            if results == "":
+                self.respond("Sorry, try asking something else")
+            else:
+                for result in results:
+                    self.respond(result.get_text().rstrip())
+
+
 
         if "I don't like you" in text:
             self.respond("Ok go on, i don't give a fuck!")
@@ -47,4 +55,3 @@ class Commander:
         engine.setProperty('volume', 0.9)  # Volume 0-1
         engine.say(response)
         engine.runAndWait()
-
